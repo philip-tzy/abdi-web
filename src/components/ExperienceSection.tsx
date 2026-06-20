@@ -2,59 +2,19 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Building2, Calendar, ChevronRight } from "lucide-react";
-import { ImageCarousel } from "./ImageCarousel";
 
 const experiences = [
   {
     id: 1,
-    organization: "University Tech Club",
-    role: "Head of Technology Division",
-    duration: "2023 - Present",
-    description: "Leading a team of 15+ members in developing campus applications and organizing tech workshops. Successfully delivered 5 major projects including the EduTrack app.",
+    organization: "Community Of Love (COOL)",
+    role: "Public Relation",
+    duration: "Nov 2024 - Nov 2025",
+    description:
+      "Managed external communications and digital content strategies to increase organizational awareness on campus.",
     achievements: [
-      "Led development of 3 mobile applications",
-      "Organized 10+ technical workshops",
-      "Mentored junior developers",
-    ],
-    documentation: [
-      { src: "/placeholder.svg", alt: "Tech club workshop", caption: "Tech club workshop" },
-      { src: "/placeholder.svg", alt: "Campus app development meeting", caption: "Campus app development" },
-      { src: "/placeholder.svg", alt: "Mentoring session", caption: "Mentoring session" },
-    ],
-  },
-  {
-    id: 2,
-    organization: "Student Executive Board",
-    role: "IT Staff",
-    duration: "2022 - 2023",
-    description: "Managed digital infrastructure and developed internal tools for student organization operations.",
-    achievements: [
-      "Built event registration system",
-      "Maintained organization website",
-      "Created digital documentation system",
-    ],
-    documentation: [
-      { src: "/placeholder.svg", alt: "Student event registration", caption: "Event registration system" },
-      { src: "/placeholder.svg", alt: "Organization website maintenance", caption: "Website maintenance" },
-      { src: "/placeholder.svg", alt: "Digital documentation archive", caption: "Digital documentation" },
-    ],
-  },
-  {
-    id: 3,
-    organization: "Programming Community",
-    role: "Core Team Member",
-    duration: "2021 - 2022",
-    description: "Obtain Junior Web Developer competency certification through a technical assessment covering full-stack web application development",
-    achievements: [
-      "Demonstrate the ability to build web applications using PHP, HTML, CSS, and MySQL",
-      "Implement CRUD operations and database management for information systems",
-      "Design responsive web designs and functional user interfaces",
-      "Implement best practices in web development and database integration",
-    ],
-    documentation: [
-      { src: "/placeholder.svg", alt: "Coding competition activity", caption: "Coding competition" },
-      { src: "/placeholder.svg", alt: "Open-source collaboration", caption: "Open-source collaboration" },
-      { src: "/placeholder.svg", alt: "Hackathon participation", caption: "Hackathon participation" },
+      "Designed and produced creative content for the organization's social media platforms",
+      "Managed social media platforms to build community engagement",
+      "Documented organizational activities through photos and videos for publication",
     ],
   },
 ];
@@ -79,13 +39,11 @@ export function ExperienceSection() {
             Organizational Experience
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Leadership roles and contributions in various student organizations
+            Leadership roles and contributions in student organizations
           </p>
         </motion.div>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Animated Timeline line */}
           <motion.div
             initial={{ height: 0 }}
             animate={isInView ? { height: "100%" } : {}}
@@ -102,7 +60,6 @@ export function ExperienceSection() {
                 transition={{ duration: 0.6, delay: 0.15 * index }}
                 className="relative pl-8 md:pl-20"
               >
-                {/* Animated Timeline dot */}
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
@@ -116,7 +73,6 @@ export function ExperienceSection() {
                   />
                 </motion.div>
 
-                {/* Content */}
                 <div>
                   <motion.div
                     whileHover={{ scale: 1.02, x: 10 }}
@@ -147,16 +103,10 @@ export function ExperienceSection() {
                       {exp.description}
                     </p>
 
-                    <ImageCarousel
-                      images={exp.documentation}
-                      imageClassName="h-48 sm:h-56 md:h-64"
-                      className="mb-5"
-                    />
-
                     <div className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <motion.div
-                          key={i}
+                          key={achievement}
                           initial={{ opacity: 0, x: -20 }}
                           animate={isInView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.2 * index + 0.1 * i }}

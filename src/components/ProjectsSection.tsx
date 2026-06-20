@@ -17,10 +17,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { TiltCard } from "./TiltCard";
 import { ImageCarousel } from "./ImageCarousel";
-import aichemyImage from "@/assets/featured-project/aichemy.png";
+import skillPathOne from "@/assets/featured-project/skillpath-ai1.png";
+import skillPathTwo from "@/assets/featured-project/skillpath-ai2.png";
+import skillPathThree from "@/assets/featured-project/skillpath-ai3.png";
 import dashboardAnalisisImage from "@/assets/featured-project/dashboard-analisis.png";
-
-const placeholderImage = "/placeholder.svg";
+import uniNeedsOne from "@/assets/featured-project/unineeds1.png";
+import uniNeedsTwo from "@/assets/featured-project/unineeds2.png";
+import uniNeedsThree from "@/assets/featured-project/unineeds3.png";
+import uniNeedsFour from "@/assets/featured-project/unineeds4.png";
+import cleanSortOne from "@/assets/featured-project/cleansort1.png";
+import cleanSortTwo from "@/assets/featured-project/cleansort2.png";
+import epicorOne from "@/assets/featured-project/epicor1.png";
+import epicorTwo from "@/assets/featured-project/epicor2.png";
+import epicorThree from "@/assets/featured-project/epicor3.png";
+import epicorFour from "@/assets/featured-project/epicor4.png";
+import epicorFive from "@/assets/featured-project/epicor5.png";
+import epicorSix from "@/assets/featured-project/epicor6.png";
+import myRpOne from "@/assets/featured-project/myrp1.png";
+import myRpTwo from "@/assets/featured-project/myrp2.png";
+import myRpThree from "@/assets/featured-project/myrp3.png";
+import aiChemyOne from "@/assets/featured-project/aichemy1.png";
+import aiChemyTwo from "@/assets/featured-project/aichemy2.png";
+import aiChemyThree from "@/assets/featured-project/aichemy3.png";
 
 const categories = ["All", "Web Apps", "Data Analytics", "Game", "ERP Analysis", "AI/ML"];
 
@@ -30,14 +48,16 @@ const projects = [
     title: "SkillPath AI",
     description:
       "AI-powered career diagnostic platform that analyzes CVs, identifies skill gaps across seven IT career paths, and provides personalized upskilling recommendations. The system includes custom NLP pipelines with BIO-tagged skill entity recognition, role classification models, and career intelligence insights based on real-world job posting data.",
-    image: placeholderImage,
+    image: skillPathOne,
     images: [
-      { src: placeholderImage, alt: "SkillPath AI project preview", caption: "SkillPath AI preview" },
+      { src: skillPathOne, alt: "SkillPath AI landing page", caption: "Career diagnostic landing page" },
+      { src: skillPathTwo, alt: "SkillPath AI analysis page", caption: "CV analysis and career path insight" },
+      { src: skillPathThree, alt: "SkillPath AI recommendation page", caption: "Personalized upskilling recommendation" },
     ],
     category: "AI/ML",
     tags: ["NLP", "Machine Learning", "Streamlit", "Python", "CV Analysis"],
-    github: null,
-    demo: null,
+    github: "https://github.com/abdurrre/career-diagnostic-system",
+    demo: "https://skillpath-ai-delta.vercel.app",
     featured: true,
   },
   {
@@ -51,8 +71,8 @@ const projects = [
     ],
     category: "Data Analytics",
     tags: ["Streamlit", "Python", "Data Analysis", "EDA", "Network Analysis"],
-    github: null,
-    demo: null,
+    github: "https://github.com/philip-tzy/career-diagnostic-dashboard",
+    demo: "https://career-diagnostic-dashboard.streamlit.app",
     featured: true,
   },
   {
@@ -60,13 +80,16 @@ const projects = [
     title: "UniNeeds",
     description:
       "Full-stack marketplace web application for student needs with buyer and seller roles. UniNeeds supports registration, login, product management, cart, checkout, payment proof upload, seller verification, shipping flow, order timeline, notifications, and responsive role-based interfaces.",
-    image: placeholderImage,
+    image: uniNeedsOne,
     images: [
-      { src: placeholderImage, alt: "UniNeeds marketplace preview", caption: "UniNeeds marketplace preview" },
+      { src: uniNeedsOne, alt: "UniNeeds marketplace page", caption: "Marketplace product catalog" },
+      { src: uniNeedsTwo, alt: "UniNeeds product detail", caption: "Product and order flow" },
+      { src: uniNeedsThree, alt: "UniNeeds seller dashboard", caption: "Seller dashboard" },
+      { src: uniNeedsFour, alt: "UniNeeds checkout page", caption: "Checkout and transaction flow" },
     ],
     category: "Web Apps",
     tags: ["FastAPI", "React", "MySQL", "JWT", "SQLAlchemy"],
-    github: null,
+    github: "https://github.com/philip-tzy/unineeds",
     demo: null,
     featured: true,
   },
@@ -75,14 +98,15 @@ const projects = [
     title: "CleanSort Game",
     description:
       "Web-based educational waste sorting game built for a social project. The game teaches children waste classification through an interactive drag-and-drop mechanism and was implemented directly at a local community reading park.",
-    image: placeholderImage,
+    image: cleanSortOne,
     images: [
-      { src: placeholderImage, alt: "CleanSort Game preview", caption: "CleanSort Game preview" },
+      { src: cleanSortOne, alt: "CleanSort gameplay screen", caption: "Interactive waste sorting gameplay" },
+      { src: cleanSortTwo, alt: "CleanSort result screen", caption: "Learning result and feedback" },
     ],
     category: "Game",
     tags: ["React", "Tailwind CSS", "Vite", "Supabase", "Drag and Drop"],
-    github: null,
-    demo: null,
+    github: "https://github.com/philip-tzy/clean-sort",
+    demo: "https://cleansort.vercel.app",
     featured: false,
   },
   {
@@ -90,9 +114,14 @@ const projects = [
     title: "ERP Implementation menggunakan Epicor",
     description:
       "Academic bootcamp project focused on designing and implementing business process solutions in Epicor ERP. The implementation covers procurement, sales, and production processes, including master data setup, purchase cycle, sales order flow, BOM, BOO, MRP, and business process analysis documentation.",
-    image: placeholderImage,
+    image: epicorOne,
     images: [
-      { src: placeholderImage, alt: "Epicor ERP implementation preview", caption: "Epicor ERP implementation preview" },
+      { src: epicorOne, alt: "Epicor ERP procurement process", caption: "Procurement process configuration" },
+      { src: epicorTwo, alt: "Epicor ERP purchase order flow", caption: "Purchase order flow" },
+      { src: epicorThree, alt: "Epicor ERP sales process", caption: "Sales order process" },
+      { src: epicorFour, alt: "Epicor ERP production setup", caption: "Production setup" },
+      { src: epicorFive, alt: "Epicor ERP MRP process", caption: "MRP and planning process" },
+      { src: epicorSix, alt: "Epicor ERP implementation result", caption: "Implementation result" },
     ],
     category: "ERP Analysis",
     tags: ["Epicor ERP", "Procurement", "Sales", "Production", "MRP"],
@@ -105,13 +134,15 @@ const projects = [
     title: "MyRP",
     description:
       "Full-stack Material Requirements Planning web application for production planning. MyRP combines React 18, Vite, Express.js, Supabase PostgreSQL, and a custom MRP engine with netting, lot sizing, offsetting, BOM explosion, purchase suggestions, and job recommendations.",
-    image: placeholderImage,
+    image: myRpOne,
     images: [
-      { src: placeholderImage, alt: "MyRP application preview", caption: "MyRP application preview" },
+      { src: myRpOne, alt: "MyRP dashboard page", caption: "MRP dashboard" },
+      { src: myRpTwo, alt: "MyRP master data page", caption: "Master data management" },
+      { src: myRpThree, alt: "MyRP MRP engine result", caption: "MRP engine suggestions" },
     ],
     category: "Web Apps",
     tags: ["React", "Express.js", "Supabase", "PostgreSQL", "MRP"],
-    github: null,
+    github: "https://github.com/philip-tzy/MyRP",
     demo: null,
     featured: false,
   },
@@ -120,14 +151,16 @@ const projects = [
     title: "AIChemy",
     description:
       "Cloud-native AI-driven predictive maintenance platform for food and beverage manufacturing. AIchemy combines IoT sensor data, LSTM-based Remaining Useful Life prediction, XGBoost anomaly classification, real-time dashboards, maintenance alerts, simulator modules, OEE tracking, and SCADA/MES/ERP synchronization concepts.",
-    image: aichemyImage,
+    image: aiChemyOne,
     images: [
-      { src: aichemyImage, alt: "AIChemy predictive maintenance platform preview", caption: "AIChemy predictive maintenance dashboard" },
+      { src: aiChemyOne, alt: "AIChemy predictive maintenance dashboard", caption: "Predictive maintenance dashboard" },
+      { src: aiChemyTwo, alt: "AIChemy equipment monitoring page", caption: "Equipment monitoring" },
+      { src: aiChemyThree, alt: "AIChemy alert and simulation page", caption: "Alerts and simulator module" },
     ],
     category: "AI/ML",
     tags: ["Next.js", "FastAPI", "Supabase", "LSTM", "XGBoost", "IoT"],
-    github: null,
-    demo: null,
+    github: "https://github.com/Fahran666/kerry-predictive-pulse",
+    demo: "https://kerry-predictive-pulse.vercel.app",
     featured: true,
   },
 ];
@@ -228,7 +261,7 @@ export function ProjectsSection() {
                 <img
                   src={project.image}
                   alt={`${project.title} preview`}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-contain bg-white p-2 transition-transform duration-500 group-hover:scale-105"
                 />
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/30"

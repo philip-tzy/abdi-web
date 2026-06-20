@@ -1,4 +1,4 @@
-import { Download, Mail, Sparkles } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParticleField } from "./ParticleField";
 import image from "../assets/image.png";
@@ -65,17 +65,6 @@ export function HeroSection() {
                 </a>
               </Button>
 
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="rounded-full px-8 border-border hover:bg-muted glass-morphism transition-all duration-300"
-              >
-                <a href="/cv.pdf" download>
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </a>
-              </Button>
             </div>
           </div>
 

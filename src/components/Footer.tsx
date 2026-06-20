@@ -1,9 +1,12 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+  { name: "GitHub", icon: Github, href: "https://github.com/philip-tzy" },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/abdi-fhilipus-tampubolon-7337a7325",
+  },
 ];
 
 const navLinks = [
@@ -28,9 +31,6 @@ export function Footer() {
               </div>
               <span className="font-semibold text-foreground">Portfolio</span>
             </a>
-            <p className="text-sm text-muted-foreground flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 text-destructive fill-destructive" /> in Bandung
-            </p>
           </div>
 
           {/* Navigation */}
@@ -65,7 +65,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border">
           <p className="text-center text-sm text-muted-foreground">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Abdi Fhilipus Tampubolon. All rights reserved.
           </p>
         </div>
       </div>

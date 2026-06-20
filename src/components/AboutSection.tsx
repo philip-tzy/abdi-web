@@ -7,29 +7,54 @@ import { Reveal, TextReveal } from "./RevealAnimations";
 
 const skillCategories = [
   {
-    title: "Development Skills",
+    title: "ERP & Business Process",
     skills: [
-      { name: "Flutter/Dart", level: 90 },
-      { name: "Firebase", level: 85 },
-      { name: "Mobile Development", level: 88 },
-      { name: "Full-stack Development", level: 80 },
-      { name: "UI/UX Design", level: 82 },
+      "Epicor ERP",
+      "Business Process Analysis",
+      "Procurement Process",
+      "Purchasing",
+      "Sales Order",
+      "Production",
+      "Inventory",
+      "MRP",
+      "PR/PO/GR/Invoice Flow",
     ],
   },
   {
-    title: "ERP & Business Systems",
+    title: "Data & Analytics",
     skills: [
-      { name: "ERP Implementation", level: 85 },
-      { name: "Epicor Configuration", level: 88 },
-      { name: "Business Process Optimization", level: 80 },
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Data Cleaning",
+      "EDA",
+      "Data Visualization",
+      "Dashboard Development",
+      "Streamlit",
     ],
   },
   {
-    title: "Technical Skills",
+    title: "AI & Machine Learning",
     skills: [
-      { name: "Database Management", level: 82 },
-      { name: "System Integration", level: 78 },
-      { name: "Technical Documentation", level: 85 },
+      "Machine Learning",
+      "NLP",
+      "Named Entity Recognition",
+      "TensorFlow",
+      "Keras",
+      "Model Classification",
+    ],
+  },
+  {
+    title: "Web Development",
+    skills: [
+      "React",
+      "Next.js",
+      "FastAPI",
+      "Laravel",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
     ],
   },
 ];
@@ -141,13 +166,13 @@ export function AboutSection() {
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, index) => (
                     <motion.span
-                      key={skill.name}
+                      key={skill}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.3, delay: 0.4 + catIndex * 0.1 + index * 0.05 }}
                       className="skill-tag"
                     >
-                      {skill.name}
+                      {skill}
                     </motion.span>
                   ))}
                 </div>

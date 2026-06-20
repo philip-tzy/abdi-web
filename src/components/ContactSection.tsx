@@ -1,17 +1,24 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com", color: "hover:text-foreground" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-600" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com", color: "hover:text-sky-500" },
+  { name: "GitHub", icon: Github, href: "https://github.com/philip-tzy", color: "hover:text-foreground" },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/abdi-fhilipus-tampubolon-7337a7325",
+    color: "hover:text-blue-600",
+  },
 ];
+
+const contactEmail = "abditampubolon1@gmail.com";
+const whatsappNumber = "6281264976875";
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -22,23 +29,34 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const whatsappMessage = [
+      "Halo Abdi, saya menghubungi dari website portfolio.",
+      "",
+      `Nama: ${name}`,
+      `Email: ${email}`,
+      "",
+      `Pesan: ${message}`,
+    ].join("\n");
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
     setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setIsSubmitted(true);
     toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "WhatsApp opened!",
+      description: "Please tap send in WhatsApp to complete your message.",
     });
 
-    // Reset form after a delay
     setTimeout(() => {
       setIsSubmitted(false);
-      (e.target as HTMLFormElement).reset();
-    }, 3000);
+      form.reset();
+      setIsSubmitting(false);
+    }, 1500);
   };
 
   return (
@@ -113,10 +131,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a 
-                      href="mailto:your.email@example.com" 
+                      href={`mailto:${contactEmail}`}
                       className="text-foreground font-medium hover:text-accent transition-colors"
                     >
-                      your.email@example.com
+                      {contactEmail}
                     </a>
                   </div>
                 </div>
@@ -127,7 +145,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-foreground font-medium">Cikampek, West Java, Indonesia</p>
+                    <p className="text-foreground font-medium">Bekasi, West Java, Indonesia</p>
                   </div>
                 </div>
               </div>
@@ -215,17 +233,17 @@ export function ContactSection() {
                   {isSubmitted ? (
                     <>
                       <CheckCircle className="mr-2 h-5 w-5" />
-                      Message Sent!
+                      WhatsApp Opened!
                     </>
                   ) : isSubmitting ? (
                     <>
                       <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
-                      Sending...
+                      Opening WhatsApp...
                     </>
                   ) : (
                     <>
                       <Send className="mr-2 h-5 w-5" />
-                      Send Message
+                      Send via WhatsApp
                     </>
                   )}
                 </Button>
